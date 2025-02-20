@@ -7,8 +7,8 @@ import { TodoInterface } from "./types";
 function TodoList(){
     // state for form input
     const [task, setTask] = useState("");
-    // state for todo list
-    const [todos, setTodos] = useState<TodoInterface[]>([]);
+    // local storage state for todo list; if not found set to empty array of TodoInterface
+    const [todos, setTodos] = useLocalStorageState<TodoInterface[]>('todo', []);
 
     // form input handler
     function handleChange(evt: React.ChangeEvent<HTMLInputElement>){

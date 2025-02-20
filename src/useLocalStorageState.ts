@@ -1,8 +1,9 @@
 import {useState, useEffect} from "react";
 
-const useLocalStorageState = (key: string, defaultValue: string) => {
-    const [state, setState] = useState(() => {
-        let value;
+// specifying that it returns tuple of the return value, and setState function
+const useLocalStorageState = <T, > (key: string, defaultValue: T): [T, React.Dispatch<React.SetStateAction<T>>] => {
+    const [state, setState] = useState<T>(() => {
+        let value: T;
         try {
             value = JSON.parse(
               window.localStorage.getItem(key) ||          
