@@ -1,6 +1,7 @@
 # React + TypeScript + Vite
 
 Simple to-do app built with TS and React.
+
 Included features:
 - add to-do
 - cross/uncross to-do
